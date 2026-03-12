@@ -34,6 +34,7 @@ class PostCardWidget extends StatelessWidget {
             fontWeight: FontWeight.w600,
           ),
           SizedBox(height: 10.h),
+          Divider(),
           CustomText(
             textAlign: TextAlign.start,
             text: body ?? 'N/A',
