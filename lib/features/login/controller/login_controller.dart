@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test_project/app/helpers/prefs_helper.dart';
 import 'package:flutter_test_project/app/utils/app_constants.dart';
 import 'package:flutter_test_project/features/login/model/user_model_data.dart';
+import 'package:flutter_test_project/routes/app_routes.dart';
 import 'package:flutter_test_project/services/api_client.dart';
 import 'package:flutter_test_project/services/api_urls.dart';
 import 'package:get/get.dart';
@@ -75,6 +76,7 @@ class LoginController extends GetxController {
     await PrefsHelper.instance.remove(AppConstants.instance.accessToken);
     await PrefsHelper.instance.remove(AppConstants.instance.userDara);
     userData = null;
+    Get.offAllNamed(AppRoutes.loginScreen);
     update();
   }
 }

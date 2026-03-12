@@ -28,7 +28,7 @@ class FlutterTestProject extends StatelessWidget {
         initialRoute: AppRoutes.initialRoute,
         theme: AppThemeData.lightThemeData,
         darkTheme: AppThemeData.darkThemeData,
-        themeMode: ThemeMode.light,
+        themeMode: ThemeMode.system,
         initialBinding: DependencyInjection(),
         routes: AppRoutes.routes,
         builder: (context, child) =>

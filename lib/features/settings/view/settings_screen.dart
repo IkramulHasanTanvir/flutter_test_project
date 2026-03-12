@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_test_project/app/theme/widget/toggle_tile_button.dart';
 import 'package:flutter_test_project/app/utils/app_colors.dart';
 import 'package:flutter_test_project/features/login/controller/login_controller.dart';
 import 'package:flutter_test_project/routes/app_routes.dart';
@@ -15,6 +16,9 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,6 +63,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   ),
                 ),
                 Divider(thickness: 0.5, height: 24.h),
+
+                // ── Personal Section ──
                 _buildSection(
                   label: 'Personal :',
                   tiles: [
@@ -67,7 +73,21 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   ],
                 ),
 
-                Spacer(),
+                SizedBox(height: 16.h),
+
+                /// ── Appearance Section ──
+                _buildSection(
+                  label: 'Appearance :',
+                  tiles: [
+                    ToggleTileButton(
+                      label: 'Dark Mode',
+                      value: false,
+                      onChanged: (_){},
+                    ),
+                  ],
+                ),
+
+                const Spacer(),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 24.w),
                   child: CustomButton(
@@ -114,19 +134,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
   }
 
   Widget _buildTile(String label, String value) {
-    return Column(
-      children: [
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 10.h),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              CustomText(text: label),
-              CustomText(text: value, fontWeight: FontWeight.w500),
-            ],
-          ),
-        ),
-      ],
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 10.h),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          CustomText(text: label),
+          CustomText(text: value, fontWeight: FontWeight.w500),
+        ],
+      ),
     );
   }
 }
