@@ -1,0 +1,44 @@
+import 'package:shared_preferences/shared_preferences.dart';
+
+class PrefsHelper {
+  PrefsHelper._();
+
+  static PrefsHelper get instance => PrefsHelper._();
+
+  Future<String> getString(String key) async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+
+    return preferences.getString(key) ?? "";
+  }
+
+  Future<bool> getBool(String key) async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+
+    return preferences.getBool(key) ?? false;
+  }
+
+  Future setString(String key, value) async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    await preferences.setString(key, value);
+  }
+
+  Future setBool(String key, bool value) async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    await preferences.setBool(key, value);
+  }
+
+  Future setInt(String key, int value) async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    await preferences.setInt(key, value);
+  }
+
+  Future<int> getInt(String key) async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    return preferences.getInt(key) ?? (-1);
+  }
+
+  Future remove(String key) async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    return preferences.remove(key);
+  }
+}
