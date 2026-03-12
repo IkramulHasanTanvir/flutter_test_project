@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_test_project/features/login/controller/login_controller.dart';
 import 'package:flutter_test_project/features/posts/model/post_model_data.dart';
 import 'package:flutter_test_project/features/products/model/product_model_data.dart';
 import 'package:flutter_test_project/services/api_client.dart';
@@ -8,7 +9,9 @@ import 'package:get/get.dart';
 class PostsController extends GetxController {
   @override
   void onInit() {
-    postsGet();
+    if(Get.find<LoginController>().userData?.accessToken != null){
+      postsGet();
+    }
     super.onInit();
   }
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_test_project/features/login/controller/login_controller.dart';
 import 'package:flutter_test_project/features/products/model/product_model_data.dart';
 import 'package:flutter_test_project/services/api_client.dart';
 import 'package:flutter_test_project/services/api_urls.dart';
@@ -7,7 +8,9 @@ import 'package:get/get.dart';
 class ProductController extends GetxController {
   @override
   void onInit() {
-    productsGet();
+    if(Get.find<LoginController>().userData?.accessToken != null) {
+      productsGet();
+    }
     super.onInit();
   }
 

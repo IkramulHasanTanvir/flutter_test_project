@@ -98,8 +98,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         builder: (context) => CustomDialog(
                           title: "Do you want to log out your profile?",
                           onCancel: () => Get.back(),
-                          onConfirm: () =>
-                              Get.offAllNamed(AppRoutes.loginScreen),
+                          onConfirm: () => controller.logout(),
                         ),
                       );
                     },

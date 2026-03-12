@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test_project/app/helpers/prefs_helper.dart';
 import 'package:flutter_test_project/app/utils/app_constants.dart';
 import 'package:flutter_test_project/features/login/model/user_model_data.dart';
+import 'package:flutter_test_project/features/posts/controller/posts_controller.dart';
+import 'package:flutter_test_project/features/products/controller/product_controller.dart';
 import 'package:flutter_test_project/routes/app_routes.dart';
 import 'package:flutter_test_project/services/api_client.dart';
 import 'package:flutter_test_project/services/api_urls.dart';
@@ -75,8 +77,11 @@ class LoginController extends GetxController {
   Future<void> logout() async {
     await PrefsHelper.instance.remove(AppConstants.instance.accessToken);
     await PrefsHelper.instance.remove(AppConstants.instance.userDara);
+    Get.find<ProductController>().productsData.clear();
+    Get.find<PostsController>().postsData.clear();
     userData = null;
     Get.offAllNamed(AppRoutes.loginScreen);
+    debugPrint('log out success');
     update();
   }
 }
