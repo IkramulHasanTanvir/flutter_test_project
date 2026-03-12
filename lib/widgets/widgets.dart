@@ -1,4 +1,4 @@
-export 'auth_title_widgets.dart';
+export 'auth_title_widget.dart';
 export 'custom_app_bar.dart';
 export 'custom_button.dart';
 export 'custom_container.dart';

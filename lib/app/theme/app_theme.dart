@@ -9,7 +9,7 @@ class AppThemeData {
         colorSchemeSeed: AppColors.primaryColor,
         appBarTheme: const AppBarTheme(
           scrolledUnderElevation: 0,
-          backgroundColor: AppColors.bgColor,
+          backgroundColor: AppColors.bgLightColor,
         ),
 
 

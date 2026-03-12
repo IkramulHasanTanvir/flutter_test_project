@@ -8,6 +8,8 @@ import 'app/helpers/device_utils.dart';
 import 'app/theme/app_theme.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   DeviceUtils.instance.lockDevicePortrait();
   runApp(const FlutterTestProject());
 }

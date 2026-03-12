@@ -100,7 +100,6 @@ class CustomNetworkImage extends StatelessWidget {
                 borderRadius: borderRadius != null ?  BorderRadius.circular(borderRadius ?? 0) : null,
                 shape: boxShape,
               ),
-              child:  Icon(Icons.error,color: Colors.grey.shade400,),
             ));
   }
 }

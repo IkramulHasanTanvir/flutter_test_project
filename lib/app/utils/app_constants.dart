@@ -5,7 +5,8 @@ class AppConstants{
   static AppConstants get instance => AppConstants._();
 
 
-    String bearerToken = "bearerToken";
+    String accessToken = "accessToken";
+    String userDara = "userDara";
 
 
 

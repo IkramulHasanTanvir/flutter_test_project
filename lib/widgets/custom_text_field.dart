@@ -105,19 +105,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
             fontWeight: FontWeight.w500,
           ),
 
-        Container(
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(widget.borderRadio ?? 10.r),
-            boxShadow: widget.showShadow ? [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.1),
-                blurRadius: 6,
-                offset: Offset(0, 3), ),
-
-            ] : null,
-          ),
-          child: TextFormField(
+        TextFormField(
             autofocus: widget.autofocus,
             enabled: widget.enabled,
             maxLength: widget.maxLength,
@@ -173,9 +161,9 @@ class _CustomTextFieldState extends State<CustomTextField> {
                 fontFamily: widget.fontFamily),
             decoration: InputDecoration(
                 contentPadding: EdgeInsets.symmetric(
-                    horizontal: widget.contentPaddingHorizontal ?? 20.w,
-                    vertical: widget.contentPaddingVertical ?? 14.h),
-                fillColor: widget.filColor ?? Colors.transparent,
+                    horizontal: widget.contentPaddingHorizontal ?? 10.w,
+                    vertical: widget.contentPaddingVertical ?? 12.h),
+                fillColor: widget.filColor ?? Colors.grey.shade100,
                 filled: true,
                 prefixIcon: widget.prefixIcon != null ? Padding(
                   padding:  EdgeInsets.symmetric(horizontal: 16.w),
@@ -204,7 +192,6 @@ class _CustomTextFieldState extends State<CustomTextField> {
                 errorStyle:
                     TextStyle(fontSize: 12.h, fontWeight: FontWeight.w400)),
           ),
-        ),
         SizedBox(height: 6.h),
       ],
     );
@@ -212,8 +199,8 @@ class _CustomTextFieldState extends State<CustomTextField> {
 
   Padding _suffixIcon(IconData icon) {
     return Padding(
-        padding: const EdgeInsets.all(12.0),
-        child: Icon(icon, color: AppColors.color4D4D4D));
+        padding: const EdgeInsets.symmetric(horizontal: 12.0),
+        child: Icon(icon, color: AppColors.color4D4D4D,size: 20.r,));
   }
 
   UnderlineInputBorder focusedBorder() {

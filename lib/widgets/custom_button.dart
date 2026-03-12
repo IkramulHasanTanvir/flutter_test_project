@@ -60,7 +60,7 @@ class CustomButton extends StatelessWidget {
       elevation: elevation,
       onTap: isLoading ? null : onPressed,
       color: backgroundColor ?? AppColors.primaryColor,
-      height: height ?? 48.h,
+      height: height ?? 40.h,
       width: width ?? double.infinity,
       radiusAll: radius ?? 10.r,
       bordersColor: bordersColor,
@@ -102,7 +102,7 @@ class CustomButton extends StatelessWidget {
                   Icon(
                     size: 18.r,
                     prefixIcon ?? Icons.arrow_back,
-                    color: foregroundColor ?? AppColors.darkColor,
+                    color: foregroundColor ?? AppColors.bgDarkColor,
                   ),
                   SizedBox(width: 8.w),
                 ],
