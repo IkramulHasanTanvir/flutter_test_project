@@ -1,8 +1,8 @@
-import 'package:ebfmart/global/custom_assets/fonts.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../app/utils/app_colors.dart';
-import '../widgets/widgets.dart';
+import 'package:flutter_test_project/app/utils/app_colors.dart';
+import 'package:flutter_test_project/widgets/custom_container.dart';
+import 'package:flutter_test_project/widgets/custom_text.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({
@@ -115,7 +115,6 @@ class CustomButton extends StatelessWidget {
                     child: CustomText(
                       text: label ?? '',
                       color: foregroundColor ?? Colors.white,
-                      fontName: fontName ?? FontFamily.causten,
                       fontWeight: fontWeight ?? FontWeight.w600,
                       fontSize: fontSize ?? 20.sp,
                     ),

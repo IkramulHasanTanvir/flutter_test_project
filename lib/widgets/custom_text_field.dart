@@ -155,7 +155,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
                       }
                     }
                   } else {
-                    bool data = AppConstants.emailValidate.hasMatch(value!);
+                    bool data = AppConstants.instance.emailValidate.hasMatch(value!);
                     if (value.isEmpty) {
                       return "Please  ${widget.hintText!.toLowerCase()}";
                     } else if (!data) {

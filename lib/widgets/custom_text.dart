@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../custom_assets/fonts.gen.dart';
-
-import '../app/utils/app_colors.dart';
 
 
 class CustomText extends StatelessWidget {
   const CustomText(
       {super.key,
-      this.maxline,
+      this.maxLine,
       this.textOverflow,
       this.fontName,
       this.textAlign = TextAlign.center,
@@ -34,7 +31,7 @@ class CustomText extends StatelessWidget {
   final Color? decorationColor;
   final String text;
   final TextAlign textAlign;
-  final int? maxline;
+  final int? maxLine;
   final String? fontName;
   final double? textHeight;
   final VoidCallback? onTap;
@@ -50,15 +47,15 @@ class CustomText extends StatelessWidget {
         child: Text(
           textAlign: textAlign,
           text,
-          maxLines: maxline,
+          maxLines: maxLine,
           overflow: textOverflow,
           style: TextStyle(
             decoration: decoration,
             decorationColor: decorationColor,
               fontSize: fontSize ?? 14.sp,
-              fontFamily: fontName ?? FontFamily.causten,
+              fontFamily: fontName,
               fontWeight: fontWeight,
-              color: color ?? AppColors.darkColor),
+              color: color),
         ),
       ),
     );
